@@ -10,6 +10,8 @@ SEAL_KEY := 1b727a055500edd9ab826840ce9428dc8bace1c04addc67bbac6b096e25ede4b
 ETCD_FLAGS := VULCAND_TEST_ETCD_NODES=${ETCD_NODES}
 VULCAN_FLAGS := VULCAND_TEST_ETCD_NODES=${ETCD_NODES} VULCAND_TEST_ETCD_PREFIX=${PREFIX} VULCAND_TEST_API_URL=${API_URL} VULCAND_TEST_SERVICE_URL=${SERVICE_URL} VULCAND_TEST_SEAL_KEY=${SEAL_KEY}
 
+DOCKER_TAG ?= latest
+
 test: clean
 	go test -v ./... -cover
 
@@ -77,10 +79,9 @@ docker-clean:
 	docker rm -f vulcand
 
 docker-build:
-	go build -a -tags netgo -installsuffix cgo -ldflags '-w' -o ./vulcand .
-	go build -a -tags netgo -installsuffix cgo -ldflags '-w' -o ./vctl/vctl ./vctl
-	go build -a -tags netgo -installsuffix cgo -ldflags '-w' -o ./vbundle/vbundle ./vbundle
-	docker build -t mailgun/vulcand:latest -f ./Dockerfile-scratch .
+	GOOS=linux CGO_ENABLED=0 godep go build -a -tags netgo -installsuffix cgo -ldflags '-w -s' -o ./bin/vulcand .
+	GOOS=linux CGO_ENABLED=0 godep go build -a -tags netgo -installsuffix cgo -ldflags '-w -s' -o ./bin/vctl ./vctl
+	docker build -t quay.io/timeline_labs/vulcand:$(DOCKER_TAG) -f Dockerfile-scratch .
 
 docker-minimal-linux:
 	bash scripts/build-minimal-linux.sh ${SEAL_KEY}
