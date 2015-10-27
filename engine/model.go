@@ -13,7 +13,7 @@ import (
 	"github.com/mailgun/vulcand/Godeps/_workspace/src/github.com/mailgun/oxy/memmetrics"
 	"github.com/mailgun/vulcand/Godeps/_workspace/src/github.com/mailgun/oxy/stream"
 	"github.com/mailgun/vulcand/Godeps/_workspace/src/github.com/mailgun/route"
-	"github.com/mailgun/vulcand/plugin"
+	"github.com/timelinelabs/vulcand/plugin"
 )
 
 // StatsProvider provides realtime stats abount endpoints, backends and locations

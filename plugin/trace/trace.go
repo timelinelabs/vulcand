@@ -10,7 +10,7 @@ import (
 
 	"github.com/mailgun/vulcand/Godeps/_workspace/src/github.com/codegangsta/cli"
 	oxytrace "github.com/mailgun/vulcand/Godeps/_workspace/src/github.com/mailgun/oxy/trace"
-	"github.com/mailgun/vulcand/plugin"
+	"github.com/timelinelabs/vulcand/plugin"
 )
 
 const Type = "trace"

@@ -4,11 +4,12 @@ import (
 	"crypto/tls"
 
 	"fmt"
-	"github.com/mailgun/vulcand/Godeps/_workspace/src/golang.org/x/crypto/ocsp"
 	"net"
 	"net/http"
 
-	"github.com/mailgun/vulcand/engine"
+	"github.com/mailgun/vulcand/Godeps/_workspace/src/golang.org/x/crypto/ocsp"
+
+	"github.com/timelinelabs/vulcand/engine"
 
 	"github.com/mailgun/vulcand/Godeps/_workspace/src/github.com/mailgun/log"
 	"github.com/mailgun/vulcand/Godeps/_workspace/src/github.com/mailgun/manners"

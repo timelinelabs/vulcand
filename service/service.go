@@ -17,14 +17,14 @@ import (
 	"github.com/mailgun/vulcand/Godeps/_workspace/src/github.com/mailgun/manners"
 	"github.com/mailgun/vulcand/Godeps/_workspace/src/github.com/mailgun/metrics"
 	"github.com/mailgun/vulcand/Godeps/_workspace/src/github.com/mailgun/scroll"
-	"github.com/mailgun/vulcand/api"
-	"github.com/mailgun/vulcand/engine"
-	"github.com/mailgun/vulcand/engine/etcdng"
-	"github.com/mailgun/vulcand/plugin"
-	"github.com/mailgun/vulcand/proxy"
-	"github.com/mailgun/vulcand/secret"
-	"github.com/mailgun/vulcand/stapler"
-	"github.com/mailgun/vulcand/supervisor"
+	"github.com/timelinelabs/vulcand/api"
+	"github.com/timelinelabs/vulcand/engine"
+	"github.com/timelinelabs/vulcand/engine/etcdng"
+	"github.com/timelinelabs/vulcand/plugin"
+	"github.com/timelinelabs/vulcand/proxy"
+	"github.com/timelinelabs/vulcand/secret"
+	"github.com/timelinelabs/vulcand/stapler"
+	"github.com/timelinelabs/vulcand/supervisor"
 )
 
 func Run(registry *plugin.Registry) error {

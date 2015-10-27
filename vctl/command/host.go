@@ -5,7 +5,7 @@ import (
 	"time"
 
 	"github.com/mailgun/vulcand/Godeps/_workspace/src/github.com/codegangsta/cli"
-	"github.com/mailgun/vulcand/engine"
+	"github.com/timelinelabs/vulcand/engine"
 )
 
 func NewHostCommand(cmd *Command) cli.Command {

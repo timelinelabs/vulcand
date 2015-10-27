@@ -18,9 +18,9 @@ import (
 	"github.com/mailgun/vulcand/Godeps/_workspace/src/github.com/coreos/go-etcd/etcd"
 	"github.com/mailgun/vulcand/Godeps/_workspace/src/github.com/mailgun/log"
 	"github.com/mailgun/vulcand/Godeps/_workspace/src/github.com/mailgun/oxy/testutils"
-	"github.com/mailgun/vulcand/engine"
-	"github.com/mailgun/vulcand/secret"
-	. "github.com/mailgun/vulcand/testutils"
+	"github.com/timelinelabs/vulcand/engine"
+	"github.com/timelinelabs/vulcand/secret"
+	. "github.com/timelinelabs/vulcand/testutils"
 
 	. "github.com/mailgun/vulcand/Godeps/_workspace/src/gopkg.in/check.v1"
 )

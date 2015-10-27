@@ -4,8 +4,8 @@ import (
 	"os"
 
 	"github.com/mailgun/vulcand/Godeps/_workspace/src/github.com/mailgun/log"
-	"github.com/mailgun/vulcand/plugin/registry"
-	"github.com/mailgun/vulcand/vctl/command"
+	"github.com/timelinelabs/vulcand/plugin/registry"
+	"github.com/timelinelabs/vulcand/vctl/command"
 )
 
 var vulcanUrl string

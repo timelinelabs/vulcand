@@ -8,8 +8,8 @@ import (
 
 	"github.com/mailgun/vulcand/Godeps/_workspace/src/github.com/mailgun/metrics"
 	"github.com/mailgun/vulcand/Godeps/_workspace/src/github.com/mailgun/timetools"
-	"github.com/mailgun/vulcand/engine"
-	"github.com/mailgun/vulcand/plugin"
+	"github.com/timelinelabs/vulcand/engine"
+	"github.com/timelinelabs/vulcand/plugin"
 )
 
 type Proxy interface {

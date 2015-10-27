@@ -5,8 +5,8 @@ import (
 	"os"
 	"runtime"
 
-	"github.com/mailgun/vulcand/plugin/registry"
-	"github.com/mailgun/vulcand/service"
+	"github.com/timelinelabs/vulcand/plugin/registry"
+	"github.com/timelinelabs/vulcand/service"
 )
 
 func main() {

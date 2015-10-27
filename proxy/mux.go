@@ -7,8 +7,8 @@ import (
 	"sync"
 	"time"
 
-	"github.com/mailgun/vulcand/engine"
-	"github.com/mailgun/vulcand/stapler"
+	"github.com/timelinelabs/vulcand/engine"
+	"github.com/timelinelabs/vulcand/stapler"
 
 	"github.com/mailgun/vulcand/Godeps/_workspace/src/github.com/mailgun/log"
 	"github.com/mailgun/vulcand/Godeps/_workspace/src/github.com/mailgun/metrics"

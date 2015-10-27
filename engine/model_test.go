@@ -7,8 +7,8 @@ import (
 	"time"
 
 	. "github.com/mailgun/vulcand/Godeps/_workspace/src/gopkg.in/check.v1"
-	"github.com/mailgun/vulcand/plugin"
-	"github.com/mailgun/vulcand/plugin/connlimit"
+	"github.com/timelinelabs/vulcand/plugin"
+	"github.com/timelinelabs/vulcand/plugin/connlimit"
 )
 
 func TestBackend(t *testing.T) { TestingT(t) }

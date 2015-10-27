@@ -9,9 +9,9 @@ import (
 
 	"github.com/mailgun/vulcand/Godeps/_workspace/src/github.com/mailgun/log"
 	"github.com/mailgun/vulcand/Godeps/_workspace/src/github.com/mailgun/scroll"
-	"github.com/mailgun/vulcand/anomaly"
-	"github.com/mailgun/vulcand/engine"
-	"github.com/mailgun/vulcand/plugin"
+	"github.com/timelinelabs/vulcand/anomaly"
+	"github.com/timelinelabs/vulcand/engine"
+	"github.com/timelinelabs/vulcand/plugin"
 )
 
 type ProxyController struct {

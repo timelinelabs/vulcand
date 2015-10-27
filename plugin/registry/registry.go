@@ -2,12 +2,12 @@
 package registry
 
 import (
-	"github.com/mailgun/vulcand/plugin"
-	"github.com/mailgun/vulcand/plugin/cbreaker"
-	"github.com/mailgun/vulcand/plugin/connlimit"
-	"github.com/mailgun/vulcand/plugin/ratelimit"
-	"github.com/mailgun/vulcand/plugin/rewrite"
-	"github.com/mailgun/vulcand/plugin/trace"
+	"github.com/timelinelabs/vulcand/plugin"
+	"github.com/timelinelabs/vulcand/plugin/cbreaker"
+	"github.com/timelinelabs/vulcand/plugin/connlimit"
+	"github.com/timelinelabs/vulcand/plugin/ratelimit"
+	"github.com/timelinelabs/vulcand/plugin/rewrite"
+	"github.com/timelinelabs/vulcand/plugin/trace"
 )
 
 func GetRegistry() *plugin.Registry {

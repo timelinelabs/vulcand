@@ -11,7 +11,7 @@ import (
 	"github.com/mailgun/vulcand/Godeps/_workspace/src/github.com/mailgun/oxy/roundrobin"
 	"github.com/mailgun/vulcand/Godeps/_workspace/src/github.com/mailgun/oxy/stream"
 	"github.com/mailgun/vulcand/Godeps/_workspace/src/github.com/mailgun/oxy/utils"
-	"github.com/mailgun/vulcand/engine"
+	"github.com/timelinelabs/vulcand/engine"
 )
 
 type frontend struct {
@@ -74,7 +74,7 @@ func syncServers(m *mux, rb *roundrobin.Rebalancer, backend *backend, w *RTWatch
 				log.Infof("%v add %v", m, s)
 			}
 			if er := w.upsertServer(s); er != nil {
-				log.Errorf("%v failed to add watcher %v, err: %s", m, s, err)
+				log.Errorf("%v failed to add watcher %v, err: %s", m, s, er)
 			}
 		}
 	}
@@ -177,9 +177,9 @@ func (f *frontend) rebuild() error {
 	var handler http.Handler
 	switch f.frontend.Type {
 	default:
-		h = str
+		handler = str
 	case engine.WS, engine.WSS:
-		h = newWebsocketUpgrader(rr, str, f)
+		handler = newWebsocketUpgrader(rr, str, f)
 	}
 
 	if err := syncServers(f.mux, rb, f.backend, watcher); err != nil {

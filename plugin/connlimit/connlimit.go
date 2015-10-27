@@ -7,7 +7,7 @@ import (
 	"github.com/mailgun/vulcand/Godeps/_workspace/src/github.com/codegangsta/cli"
 	"github.com/mailgun/vulcand/Godeps/_workspace/src/github.com/mailgun/oxy/connlimit"
 	"github.com/mailgun/vulcand/Godeps/_workspace/src/github.com/mailgun/oxy/utils"
-	"github.com/mailgun/vulcand/plugin"
+	"github.com/timelinelabs/vulcand/plugin"
 )
 
 const Type = "connlimit"

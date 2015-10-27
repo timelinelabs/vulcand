@@ -10,7 +10,7 @@ import (
 
 	"github.com/mailgun/vulcand/Godeps/_workspace/src/github.com/mailgun/log"
 	"github.com/mailgun/vulcand/Godeps/_workspace/src/github.com/mailgun/oxy/memmetrics"
-	"github.com/mailgun/vulcand/engine"
+	"github.com/timelinelabs/vulcand/engine"
 )
 
 func (mx *mux) emitMetrics() error {

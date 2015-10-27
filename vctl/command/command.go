@@ -8,10 +8,10 @@ import (
 	"strings"
 
 	"github.com/mailgun/vulcand/Godeps/_workspace/src/github.com/codegangsta/cli"
-	"github.com/mailgun/vulcand/api"
-	"github.com/mailgun/vulcand/engine"
-	"github.com/mailgun/vulcand/plugin"
-	"github.com/mailgun/vulcand/secret"
+	"github.com/timelinelabs/vulcand/api"
+	"github.com/timelinelabs/vulcand/engine"
+	"github.com/timelinelabs/vulcand/plugin"
+	"github.com/timelinelabs/vulcand/secret"
 )
 
 type Command struct {

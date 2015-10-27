@@ -4,7 +4,7 @@ import (
 	"encoding/json"
 	"fmt"
 
-	"github.com/mailgun/vulcand/plugin"
+	"github.com/timelinelabs/vulcand/plugin"
 )
 
 type rawServers struct {
