@@ -21,6 +21,7 @@ var (
 	DefaultUpgrader = &websocket.Upgrader{
 		ReadBufferSize:  1024,
 		WriteBufferSize: 1024,
+		CheckOrigin:     func(r *http.Request) bool { return true },
 	}
 
 	// DefaultDialer is a dialer with all fields set to the default zero values.
@@ -65,24 +66,24 @@ func (w *WebsocketUpgrader) ServeHTTP(wr http.ResponseWriter, req *http.Request)
 		return
 	}
 	wsProxy(url).ServerHTTP(wr, req)
-	// u.ws.ServeHTTP(w, req)
 }
 
 func wsProxy(u *url.URL) *WebsocketProxy {
-	fn := func(r *http.Request) *url.URL {
-		uu := *u
-		uu.Fragment = r.URL.Fragment
-		uu.Path = r.URL.Path
-		uu.RawQuery = r.URL.RawQuery
-		switch u.Scheme {
-		case "http":
-			uu.Scheme = "ws"
-		case "https":
-			uu.Scheme = "wss"
-		}
-		return &uu
+	return &WebsocketProxy{
+		URL: func(r *http.Request) *url.URL {
+			uu := *u
+			uu.Fragment = r.URL.Fragment
+			uu.Path = r.URL.Path
+			uu.RawQuery = r.URL.RawQuery
+			switch u.Scheme {
+			case "http":
+				uu.Scheme = "ws"
+			case "https":
+				uu.Scheme = "wss"
+			}
+			return &uu
+		},
 	}
-	return &WebsocketProxy{URL: fn}
 }
 
 func (w *WebsocketProxy) ServerHTTP(rw http.ResponseWriter, req *http.Request) {
