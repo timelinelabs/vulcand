@@ -86,6 +86,8 @@ func wsProxy(u *url.URL) *WebsocketProxy {
 			}
 			return &uu
 		},
+		Upgrader: DefaultUpgrader,
+		Dialer:   DefaultDialer,
 	}
 }
 
