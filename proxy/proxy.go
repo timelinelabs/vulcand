@@ -6,10 +6,11 @@ import (
 	"os"
 	"time"
 
-	"github.com/mailgun/vulcand/Godeps/_workspace/src/github.com/mailgun/metrics"
-	"github.com/mailgun/vulcand/Godeps/_workspace/src/github.com/mailgun/timetools"
 	"github.com/timelinelabs/vulcand/engine"
 	"github.com/timelinelabs/vulcand/plugin"
+	"github.com/timelinelabs/vulcand/router"
+	"github.com/vulcand/vulcand/Godeps/_workspace/src/github.com/vulcand/metrics"
+	"github.com/vulcand/vulcand/Godeps/_workspace/src/github.com/vulcand/timetools"
 )
 
 type Proxy interface {
@@ -56,6 +57,7 @@ type Options struct {
 	Files              []*FileDescriptor
 	TimeProvider       timetools.TimeProvider
 	NotFoundMiddleware plugin.Middleware
+	Router             router.Router
 }
 
 type NewProxyFn func(id int) (Proxy, error)

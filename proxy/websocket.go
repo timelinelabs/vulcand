@@ -9,8 +9,8 @@ import (
 	"sync"
 
 	"github.com/gorilla/websocket"
-	"github.com/mailgun/vulcand/Godeps/_workspace/src/github.com/mailgun/log"
-	"github.com/mailgun/vulcand/Godeps/_workspace/src/github.com/mailgun/oxy/roundrobin"
+	"github.com/vulcand/vulcand/Godeps/_workspace/src/github.com/vulcand/log"
+	"github.com/vulcand/vulcand/Godeps/_workspace/src/github.com/vulcand/oxy/roundrobin"
 	// "golang.org/x/net/websocket"
 )
 

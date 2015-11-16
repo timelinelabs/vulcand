@@ -3,14 +3,16 @@ package testutils
 import (
 	"encoding/hex"
 	"fmt"
+
 	"net/http"
 	"net/http/httptest"
 	"sync/atomic"
 
-	"github.com/mailgun/vulcand/Godeps/_workspace/src/golang.org/x/crypto/ocsp"
+	"github.com/vulcand/vulcand/Godeps/_workspace/src/golang.org/x/crypto/ocsp"
 
 	"github.com/timelinelabs/vulcand/engine"
 	"github.com/timelinelabs/vulcand/plugin/ratelimit"
+	routelib "github.com/vulcand/vulcand/Godeps/_workspace/src/github.com/vulcand/route"
 )
 
 func init() {
@@ -109,7 +111,7 @@ func MakeListener(addr string, protocol string) engine.Listener {
 }
 
 func MakeFrontend(route string, backendId string) engine.Frontend {
-	f, err := engine.NewHTTPFrontend(UID("frontend"), backendId, route, engine.HTTPFrontendSettings{})
+	f, err := engine.NewHTTPFrontend(routelib.NewMux(), UID("frontend"), backendId, route, engine.HTTPFrontendSettings{})
 	if err != nil {
 		panic(err)
 	}

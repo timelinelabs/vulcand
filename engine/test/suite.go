@@ -4,10 +4,15 @@ import (
 	"testing"
 	"time"
 
+<<<<<<< HEAD
 	"github.com/timelinelabs/vulcand/engine"
 	"github.com/timelinelabs/vulcand/plugin/connlimit"
+=======
+	"github.com/vulcand/vulcand/engine"
+	"github.com/vulcand/vulcand/plugin/connlimit"
+>>>>>>> master
 
-	. "github.com/mailgun/vulcand/Godeps/_workspace/src/gopkg.in/check.v1"
+	. "github.com/vulcand/vulcand/Godeps/_workspace/src/gopkg.in/check.v1"
 )
 
 func TestEtcd(t *testing.T) { TestingT(t) }

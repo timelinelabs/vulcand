@@ -4,7 +4,12 @@ import (
 	"encoding/json"
 	"fmt"
 
+<<<<<<< HEAD
 	"github.com/timelinelabs/vulcand/plugin"
+=======
+	"github.com/vulcand/vulcand/plugin"
+	"github.com/vulcand/vulcand/router"
+>>>>>>> master
 )
 
 type rawServers struct {
@@ -73,7 +78,7 @@ func HostsFromJSON(in []byte) ([]Host, error) {
 	return out, nil
 }
 
-func FrontendsFromJSON(in []byte) ([]Frontend, error) {
+func FrontendsFromJSON(router router.Router, in []byte) ([]Frontend, error) {
 	var rf *rawFrontends
 	err := json.Unmarshal(in, &rf)
 	if err != nil {
@@ -81,7 +86,7 @@ func FrontendsFromJSON(in []byte) ([]Frontend, error) {
 	}
 	out := make([]Frontend, len(rf.Frontends))
 	for i, raw := range rf.Frontends {
-		f, err := FrontendFromJSON(raw)
+		f, err := FrontendFromJSON(router, raw)
 		if err != nil {
 			return nil, err
 		}
@@ -147,7 +152,7 @@ func KeyPairFromJSON(in []byte) (*KeyPair, error) {
 	return NewKeyPair(c.Cert, c.Key)
 }
 
-func FrontendFromJSON(in []byte, id ...string) (*Frontend, error) {
+func FrontendFromJSON(router router.Router, in []byte, id ...string) (*Frontend, error) {
 	var rf *rawFrontend
 	if err := json.Unmarshal(in, &rf); err != nil {
 		return nil, err
@@ -164,7 +169,7 @@ func FrontendFromJSON(in []byte, id ...string) (*Frontend, error) {
 	if len(id) != 0 {
 		rf.Id = id[0]
 	}
-	f, err := NewHTTPFrontend(rf.Id, rf.BackendId, rf.Route, s)
+	f, err := NewHTTPFrontend(router, rf.Id, rf.BackendId, rf.Route, s)
 	if err != nil {
 		return nil, err
 	}

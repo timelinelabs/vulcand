@@ -1,8 +1,9 @@
 package command
 
 import (
-	"github.com/mailgun/vulcand/Godeps/_workspace/src/github.com/codegangsta/cli"
+	"github.com/mailgun/route"
 	"github.com/timelinelabs/vulcand/engine"
+	"github.com/vulcand/vulcand/Godeps/_workspace/src/github.com/codegangsta/cli"
 )
 
 func NewFrontendCommand(cmd *Command) cli.Command {
@@ -78,7 +79,7 @@ func (cmd *Command) upsertFrontendAction(c *cli.Context) {
 		cmd.printError(err)
 		return
 	}
-	f, err := engine.NewHTTPFrontend(c.String("id"), c.String("b"), c.String("route"), settings)
+	f, err := engine.NewHTTPFrontend(route.NewMux(), c.String("id"), c.String("b"), c.String("route"), settings)
 	if err != nil {
 		cmd.printError(err)
 		return

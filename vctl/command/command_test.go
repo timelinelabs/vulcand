@@ -8,8 +8,6 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/mailgun/vulcand/Godeps/_workspace/src/github.com/mailgun/log"
-	"github.com/mailgun/vulcand/Godeps/_workspace/src/github.com/mailgun/scroll"
 	"github.com/timelinelabs/vulcand/api"
 	"github.com/timelinelabs/vulcand/engine"
 	"github.com/timelinelabs/vulcand/engine/memng"
@@ -19,8 +17,10 @@ import (
 	"github.com/timelinelabs/vulcand/stapler"
 	"github.com/timelinelabs/vulcand/supervisor"
 	"github.com/timelinelabs/vulcand/testutils"
+	"github.com/vulcand/vulcand/Godeps/_workspace/src/github.com/vulcand/log"
+	"github.com/vulcand/vulcand/Godeps/_workspace/src/github.com/vulcand/scroll"
 
-	. "github.com/mailgun/vulcand/Godeps/_workspace/src/gopkg.in/check.v1"
+	. "github.com/vulcand/vulcand/Godeps/_workspace/src/gopkg.in/check.v1"
 )
 
 const OK = ".*OK.*"

@@ -7,8 +7,8 @@ import (
 	"strings"
 	"text/template"
 
-	"github.com/mailgun/vulcand/Godeps/_workspace/src/github.com/codegangsta/cli"
-	"github.com/mailgun/vulcand/Godeps/_workspace/src/github.com/mailgun/log"
+	"github.com/vulcand/vulcand/Godeps/_workspace/src/github.com/codegangsta/cli"
+	"github.com/vulcand/vulcand/Godeps/_workspace/src/github.com/vulcand/log"
 )
 
 var vulcanUrl string
@@ -28,7 +28,7 @@ func main() {
 				cli.StringSliceFlag{
 					Name:  "middleware, m",
 					Value: &cli.StringSlice{},
-					Usage: "Path to repo and revision, e.g. github.com/mailgun/vulcand-plugins/auth",
+					Usage: "Path to repo and revision, e.g. github.com/vulcand/vulcand-plugins/auth",
 				},
 			},
 		},

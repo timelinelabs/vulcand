@@ -5,9 +5,6 @@ import (
 	"net/http/httptest"
 	"testing"
 
-	"github.com/mailgun/vulcand/Godeps/_workspace/src/github.com/mailgun/log"
-	oxytest "github.com/mailgun/vulcand/Godeps/_workspace/src/github.com/mailgun/oxy/testutils"
-	"github.com/mailgun/vulcand/Godeps/_workspace/src/github.com/mailgun/scroll"
 	"github.com/timelinelabs/vulcand/engine"
 	"github.com/timelinelabs/vulcand/engine/memng"
 	"github.com/timelinelabs/vulcand/plugin/connlimit"
@@ -16,8 +13,11 @@ import (
 	"github.com/timelinelabs/vulcand/stapler"
 	"github.com/timelinelabs/vulcand/supervisor"
 	"github.com/timelinelabs/vulcand/testutils"
+	"github.com/vulcand/vulcand/Godeps/_workspace/src/github.com/vulcand/log"
+	oxytest "github.com/vulcand/vulcand/Godeps/_workspace/src/github.com/vulcand/oxy/testutils"
+	"github.com/vulcand/vulcand/Godeps/_workspace/src/github.com/vulcand/scroll"
 
-	. "github.com/mailgun/vulcand/Godeps/_workspace/src/gopkg.in/check.v1"
+	. "github.com/vulcand/vulcand/Godeps/_workspace/src/gopkg.in/check.v1"
 )
 
 func TestApi(t *testing.T) { TestingT(t) }
@@ -207,7 +207,7 @@ func (s *ApiSuite) TestFrontendCRUD(c *C) {
 
 	c.Assert(s.client.UpsertBackend(*b), IsNil)
 
-	f, err := engine.NewHTTPFrontend("f1", b.Id, `Path("/")`, engine.HTTPFrontendSettings{})
+	f, err := engine.NewHTTPFrontend(s.ng.GetRegistry().GetRouter(), "f1", b.Id, `Path("/")`, engine.HTTPFrontendSettings{})
 	c.Assert(err, IsNil)
 	fk := engine.FrontendKey{Id: f.Id}
 
@@ -260,7 +260,7 @@ func (s *ApiSuite) TestMiddlewareCRUD(c *C) {
 
 	c.Assert(s.client.UpsertBackend(*b), IsNil)
 
-	f, err := engine.NewHTTPFrontend("f1", b.Id, `Path("/")`, engine.HTTPFrontendSettings{})
+	f, err := engine.NewHTTPFrontend(s.ng.GetRegistry().GetRouter(), "f1", b.Id, `Path("/")`, engine.HTTPFrontendSettings{})
 	c.Assert(err, IsNil)
 	fk := engine.FrontendKey{Id: f.Id}
 

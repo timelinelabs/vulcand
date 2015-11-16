@@ -7,11 +7,11 @@ import (
 	"os"
 	"strings"
 
-	"github.com/mailgun/vulcand/Godeps/_workspace/src/github.com/codegangsta/cli"
 	"github.com/timelinelabs/vulcand/api"
 	"github.com/timelinelabs/vulcand/engine"
 	"github.com/timelinelabs/vulcand/plugin"
 	"github.com/timelinelabs/vulcand/secret"
+	"github.com/vulcand/vulcand/Godeps/_workspace/src/github.com/codegangsta/cli"
 )
 
 type Command struct {
