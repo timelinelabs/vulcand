@@ -26,6 +26,9 @@ var (
 
 	// DefaultDialer is a dialer with all fields set to the default zero values.
 	DefaultDialer = websocket.DefaultDialer
+
+	// DefaultCORS is a permissive Origin check
+	DefaultCORS = func(r *http.Request) bool { return true }
 )
 
 // WebsocketUpgrader is an HTTP middleware that detects websocket upgrade requests
@@ -154,6 +157,9 @@ func (w *WebsocketProxy) ServerHTTP(rw http.ResponseWriter, req *http.Request) {
 	upgrader := w.Upgrader
 	if w.Upgrader == nil {
 		upgrader = DefaultUpgrader
+	}
+	if upgrader.CheckOrigin == nil {
+		upgrader.CheckOrigin = DefaultCORS
 	}
 
 	// Only pass those headers to the upgrader.
