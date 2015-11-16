@@ -4,7 +4,7 @@ import (
 	"net/http"
 	"time"
 
-	"github.com/vulcand/vulcand/Godeps/_workspace/src/github.com/mailgun/timetools"
+	"github.com/mailgun/timetools"
 )
 
 // RTMetrics provides aggregated performance metrics for HTTP requests processing

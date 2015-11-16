@@ -9,8 +9,8 @@ import (
 	"time"
 
 	"github.com/timelinelabs/vulcand/engine"
-	"github.com/vulcand/vulcand/Godeps/_workspace/src/github.com/vulcand/log"
-	"github.com/vulcand/vulcand/Godeps/_workspace/src/github.com/vulcand/oxy/memmetrics"
+	"github.com/vulcand/vulcand/Godeps/_workspace/src/github.com/mailgun/log"
+	"github.com/vulcand/vulcand/Godeps/_workspace/src/github.com/mailgun/oxy/memmetrics"
 )
 
 func (mx *mux) emitMetrics() error {

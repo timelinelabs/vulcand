@@ -19,7 +19,7 @@ import (
 	"github.com/timelinelabs/vulcand/secret"
 	. "github.com/timelinelabs/vulcand/testutils"
 	"github.com/vulcand/vulcand/Godeps/_workspace/src/github.com/coreos/go-etcd/etcd"
-	"github.com/vulcand/vulcand/Godeps/_workspace/src/github.com/vulcand/log"
+	"github.com/vulcand/vulcand/Godeps/_workspace/src/github.com/mailgun/log"
 	"github.com/vulcand/vulcand/Godeps/_workspace/src/github.com/vulcand/oxy/testutils"
 
 	. "github.com/vulcand/vulcand/Godeps/_workspace/src/gopkg.in/check.v1"

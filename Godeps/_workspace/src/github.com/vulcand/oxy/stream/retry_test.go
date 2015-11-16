@@ -5,11 +5,11 @@ import (
 	"net/http/httptest"
 	"os"
 
-	"github.com/vulcand/vulcand/Godeps/_workspace/src/github.com/vulcand/oxy/forward"
-	"github.com/vulcand/vulcand/Godeps/_workspace/src/github.com/vulcand/oxy/roundrobin"
-	"github.com/vulcand/vulcand/Godeps/_workspace/src/github.com/vulcand/oxy/testutils"
-	"github.com/vulcand/vulcand/Godeps/_workspace/src/github.com/vulcand/oxy/utils"
-	. "github.com/vulcand/vulcand/Godeps/_workspace/src/gopkg.in/check.v1"
+	"github.com/mailgun/oxy/forward"
+	"github.com/mailgun/oxy/roundrobin"
+	"github.com/mailgun/oxy/utils"
+	"github.com/vulcand/oxy/testutils"
+	. "gopkg.in/check.v1"
 )
 
 type RTSuite struct{}

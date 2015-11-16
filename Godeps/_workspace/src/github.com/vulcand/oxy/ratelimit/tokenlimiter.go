@@ -7,9 +7,9 @@ import (
 	"sync"
 	"time"
 
-	"github.com/vulcand/vulcand/Godeps/_workspace/src/github.com/mailgun/timetools"
-	"github.com/vulcand/vulcand/Godeps/_workspace/src/github.com/mailgun/ttlmap"
-	"github.com/vulcand/vulcand/Godeps/_workspace/src/github.com/vulcand/oxy/utils"
+	"github.com/mailgun/oxy/utils"
+	"github.com/mailgun/timetools"
+	"github.com/mailgun/ttlmap"
 )
 
 const DefaultCapacity = // RateSet maintains a set of rates. It can contain only one rate per period at a time.

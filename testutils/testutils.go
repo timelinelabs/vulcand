@@ -12,7 +12,7 @@ import (
 
 	"github.com/timelinelabs/vulcand/engine"
 	"github.com/timelinelabs/vulcand/plugin/ratelimit"
-	routelib "github.com/vulcand/vulcand/Godeps/_workspace/src/github.com/vulcand/route"
+	routelib "github.com/vulcand/vulcand/Godeps/_workspace/src/github.com/mailgun/route"
 )
 
 func init() {

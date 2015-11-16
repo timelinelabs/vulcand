@@ -9,10 +9,10 @@ import (
 	"testing"
 	"time"
 
-	"github.com/vulcand/vulcand/Godeps/_workspace/src/github.com/mailgun/timetools"
-	"github.com/vulcand/vulcand/Godeps/_workspace/src/github.com/vulcand/oxy/memmetrics"
-	"github.com/vulcand/vulcand/Godeps/_workspace/src/github.com/vulcand/oxy/testutils"
-	. "github.com/vulcand/vulcand/Godeps/_workspace/src/gopkg.in/check.v1"
+	"github.com/mailgun/oxy/memmetrics"
+	"github.com/mailgun/timetools"
+	"github.com/vulcand/oxy/testutils"
+	. "gopkg.in/check.v1"
 )
 
 func TestCircuitBreaker(t *testing.T) { TestingT(t) }

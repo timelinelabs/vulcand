@@ -5,11 +5,7 @@ import (
 	"net"
 	"net/http"
 
-<<<<<<< HEAD
 	"github.com/timelinelabs/vulcand/engine"
-=======
-	"github.com/vulcand/vulcand/engine"
->>>>>>> master
 )
 
 type backend struct {

@@ -6,8 +6,8 @@ import (
 
 	"github.com/timelinelabs/vulcand/plugin"
 	"github.com/vulcand/vulcand/Godeps/_workspace/src/github.com/codegangsta/cli"
-	"github.com/vulcand/vulcand/Godeps/_workspace/src/github.com/vulcand/oxy/connlimit"
-	"github.com/vulcand/vulcand/Godeps/_workspace/src/github.com/vulcand/oxy/utils"
+	"github.com/vulcand/vulcand/Godeps/_workspace/src/github.com/mailgun/oxy/connlimit"
+	"github.com/vulcand/vulcand/Godeps/_workspace/src/github.com/mailgun/oxy/utils"
 )
 
 const Type = "connlimit"

@@ -11,10 +11,10 @@ import (
 	"github.com/timelinelabs/vulcand/router"
 	"github.com/timelinelabs/vulcand/stapler"
 
-	"github.com/vulcand/vulcand/Godeps/_workspace/src/github.com/vulcand/log"
-	"github.com/vulcand/vulcand/Godeps/_workspace/src/github.com/vulcand/metrics"
-	"github.com/vulcand/vulcand/Godeps/_workspace/src/github.com/vulcand/route"
-	"github.com/vulcand/vulcand/Godeps/_workspace/src/github.com/vulcand/timetools"
+	"github.com/vulcand/vulcand/Godeps/_workspace/src/github.com/mailgun/log"
+	"github.com/vulcand/vulcand/Godeps/_workspace/src/github.com/mailgun/metrics"
+	"github.com/vulcand/vulcand/Godeps/_workspace/src/github.com/mailgun/route"
+	"github.com/vulcand/vulcand/Godeps/_workspace/src/github.com/mailgun/timetools"
 )
 
 // mux is capable of listening on multiple interfaces, graceful shutdowns and updating TLS certificates

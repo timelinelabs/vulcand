@@ -4,12 +4,8 @@ import (
 	"encoding/json"
 	"fmt"
 
-<<<<<<< HEAD
 	"github.com/timelinelabs/vulcand/plugin"
-=======
-	"github.com/vulcand/vulcand/plugin"
-	"github.com/vulcand/vulcand/router"
->>>>>>> master
+	"github.com/timelinelabs/vulcand/router"
 )
 
 type rawServers struct {

@@ -11,9 +11,9 @@ import (
 
 	"github.com/timelinelabs/vulcand/engine"
 
-	"github.com/vulcand/vulcand/Godeps/_workspace/src/github.com/vulcand/log"
-	"github.com/vulcand/vulcand/Godeps/_workspace/src/github.com/vulcand/manners"
-	"github.com/vulcand/vulcand/Godeps/_workspace/src/github.com/vulcand/route"
+	"github.com/vulcand/vulcand/Godeps/_workspace/src/github.com/mailgun/log"
+	"github.com/vulcand/vulcand/Godeps/_workspace/src/github.com/mailgun/manners"
+	"github.com/vulcand/vulcand/Godeps/_workspace/src/github.com/mailgun/route"
 )
 
 // srv contains all that is necessary to run the HTTP(s) server. server does not work on its own,

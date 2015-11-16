@@ -9,9 +9,9 @@ import (
 
 	"github.com/timelinelabs/vulcand/plugin"
 	"github.com/vulcand/vulcand/Godeps/_workspace/src/github.com/codegangsta/cli"
-	"github.com/vulcand/vulcand/Godeps/_workspace/src/github.com/vulcand/oxy/ratelimit"
-	"github.com/vulcand/vulcand/Godeps/_workspace/src/github.com/vulcand/oxy/utils"
-	"github.com/vulcand/vulcand/Godeps/_workspace/src/github.com/vulcand/timetools"
+	"github.com/vulcand/vulcand/Godeps/_workspace/src/github.com/mailgun/oxy/ratelimit"
+	"github.com/vulcand/vulcand/Godeps/_workspace/src/github.com/mailgun/oxy/utils"
+	"github.com/vulcand/vulcand/Godeps/_workspace/src/github.com/mailgun/timetools"
 )
 
 // Spec is an entry point of a plugin and will be called to register this middleware plugin withing vulcand

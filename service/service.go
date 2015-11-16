@@ -21,10 +21,10 @@ import (
 	"github.com/timelinelabs/vulcand/stapler"
 	"github.com/timelinelabs/vulcand/supervisor"
 	"github.com/vulcand/vulcand/Godeps/_workspace/src/github.com/coreos/go-etcd/etcd"
-	"github.com/vulcand/vulcand/Godeps/_workspace/src/github.com/vulcand/log"
-	"github.com/vulcand/vulcand/Godeps/_workspace/src/github.com/vulcand/manners"
-	"github.com/vulcand/vulcand/Godeps/_workspace/src/github.com/vulcand/metrics"
-	"github.com/vulcand/vulcand/Godeps/_workspace/src/github.com/vulcand/scroll"
+	"github.com/vulcand/vulcand/Godeps/_workspace/src/github.com/mailgun/log"
+	"github.com/vulcand/vulcand/Godeps/_workspace/src/github.com/mailgun/manners"
+	"github.com/vulcand/vulcand/Godeps/_workspace/src/github.com/mailgun/metrics"
+	"github.com/vulcand/vulcand/Godeps/_workspace/src/github.com/mailgun/scroll"
 )
 
 func Run(registry *plugin.Registry) error {

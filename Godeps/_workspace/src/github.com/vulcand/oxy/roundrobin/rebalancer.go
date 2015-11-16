@@ -7,9 +7,9 @@ import (
 	"sync"
 	"time"
 
-	"github.com/vulcand/vulcand/Godeps/_workspace/src/github.com/mailgun/timetools"
-	"github.com/vulcand/vulcand/Godeps/_workspace/src/github.com/vulcand/oxy/memmetrics"
-	"github.com/vulcand/vulcand/Godeps/_workspace/src/github.com/vulcand/oxy/utils" // RebalancerOption - functional option setter for rebalancer
+	"github.com/mailgun/oxy/memmetrics"
+	"github.com/mailgun/oxy/utils" // RebalancerOption - functional option setter for rebalancer
+	"github.com/mailgun/timetools"
 )
 
 type RebalancerOption func(*Rebalancer) error

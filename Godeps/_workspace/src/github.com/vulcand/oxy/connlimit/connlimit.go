@@ -6,7 +6,7 @@ import (
 	"net/http"
 	"sync"
 
-	"github.com/vulcand/vulcand/Godeps/_workspace/src/github.com/vulcand/oxy/utils"
+	"github.com/mailgun/oxy/utils"
 )
 
 // Limiter tracks concurrent connection per token

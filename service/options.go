@@ -6,7 +6,7 @@ import (
 	"time"
 
 	"github.com/vulcand/vulcand/Godeps/_workspace/src/github.com/coreos/go-etcd/etcd"
-	"github.com/vulcand/vulcand/Godeps/_workspace/src/github.com/vulcand/log"
+	"github.com/vulcand/vulcand/Godeps/_workspace/src/github.com/mailgun/log"
 )
 
 type Options struct {

@@ -8,7 +8,7 @@ import (
 
 	"github.com/timelinelabs/vulcand/plugin"
 	"github.com/timelinelabs/vulcand/plugin/connlimit"
-	"github.com/vulcand/vulcand/Godeps/_workspace/src/github.com/vulcand/route"
+	"github.com/vulcand/vulcand/Godeps/_workspace/src/github.com/mailgun/route"
 	. "github.com/vulcand/vulcand/Godeps/_workspace/src/gopkg.in/check.v1"
 )
 

@@ -9,8 +9,8 @@ import (
 
 	"github.com/timelinelabs/vulcand/plugin"
 	"github.com/vulcand/vulcand/Godeps/_workspace/src/github.com/codegangsta/cli"
+	"github.com/vulcand/vulcand/Godeps/_workspace/src/github.com/mailgun/timetools"
 	"github.com/vulcand/vulcand/Godeps/_workspace/src/github.com/vulcand/oxy/testutils"
-	"github.com/vulcand/vulcand/Godeps/_workspace/src/github.com/vulcand/timetools"
 	. "github.com/vulcand/vulcand/Godeps/_workspace/src/gopkg.in/check.v1"
 )
 

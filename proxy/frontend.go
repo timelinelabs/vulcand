@@ -7,11 +7,11 @@ import (
 	"sort"
 
 	"github.com/timelinelabs/vulcand/engine"
-	"github.com/vulcand/vulcand/Godeps/_workspace/src/github.com/vulcand/log"
-	"github.com/vulcand/vulcand/Godeps/_workspace/src/github.com/vulcand/oxy/forward"
-	"github.com/vulcand/vulcand/Godeps/_workspace/src/github.com/vulcand/oxy/roundrobin"
-	"github.com/vulcand/vulcand/Godeps/_workspace/src/github.com/vulcand/oxy/stream"
-	"github.com/vulcand/vulcand/Godeps/_workspace/src/github.com/vulcand/oxy/utils"
+	"github.com/vulcand/vulcand/Godeps/_workspace/src/github.com/mailgun/log"
+	"github.com/vulcand/vulcand/Godeps/_workspace/src/github.com/mailgun/oxy/forward"
+	"github.com/vulcand/vulcand/Godeps/_workspace/src/github.com/mailgun/oxy/roundrobin"
+	"github.com/vulcand/vulcand/Godeps/_workspace/src/github.com/mailgun/oxy/stream"
+	"github.com/vulcand/vulcand/Godeps/_workspace/src/github.com/mailgun/oxy/utils"
 )
 
 type frontend struct {

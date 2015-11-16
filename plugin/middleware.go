@@ -3,11 +3,12 @@ package plugin
 import (
 	"encoding/json"
 	"fmt"
-	"github.com/vulcand/vulcand/Godeps/_workspace/src/github.com/codegangsta/cli"
-	"github.com/vulcand/vulcand/Godeps/_workspace/src/github.com/vulcand/route"
-	"github.com/vulcand/vulcand/router"
 	"net/http"
 	"reflect"
+
+	"github.com/vulcand/vulcand/Godeps/_workspace/src/github.com/codegangsta/cli"
+	"github.com/vulcand/vulcand/Godeps/_workspace/src/github.com/mailgun/route"
+	"github.com/vulcand/vulcand/router"
 )
 
 // Middleware specification, used to construct new middlewares and plug them into CLI API and backends

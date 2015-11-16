@@ -5,7 +5,7 @@ import (
 
 	"github.com/timelinelabs/vulcand/engine/test"
 	"github.com/timelinelabs/vulcand/plugin/registry"
-	"github.com/vulcand/vulcand/Godeps/_workspace/src/github.com/vulcand/log"
+	"github.com/vulcand/vulcand/Godeps/_workspace/src/github.com/mailgun/log"
 
 	. "github.com/vulcand/vulcand/Godeps/_workspace/src/gopkg.in/check.v1"
 )

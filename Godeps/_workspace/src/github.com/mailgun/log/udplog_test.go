@@ -3,7 +3,7 @@ package log
 import (
 	"strings"
 
-	. "github.com/vulcand/vulcand/Godeps/_workspace/src/gopkg.in/check.v1"
+	. "gopkg.in/check.v1"
 )
 
 type UDPLoggerSuite struct {

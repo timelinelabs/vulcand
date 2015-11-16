@@ -38,8 +38,8 @@ import (
 	"testing"
 	"time"
 
-	. "github.com/timelinelabs/vulcand/Godeps/_workspace/src/gopkg.in/check.v1"
-	"github.com/timelinelabs/vulcand/Godeps/_workspace/src/gopkg.in/mgo.v2/bson"
+	. "gopkg.in/check.v1"
+	"gopkg.in/mgo.v2/bson"
 	"gopkg.in/yaml.v2"
 )
 

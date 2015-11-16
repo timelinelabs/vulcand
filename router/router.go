@@ -3,7 +3,7 @@ package router
 import "net/http"
 
 //This interface captures all routing functionality required by vulcan.
-//The routing functionality mainly comes from "github.com/vulcand/route",
+//The routing functionality mainly comes from "github.com/mailgun/route",
 type Router interface {
 
 	//Sets the not-found handler (this handler is called when no other handlers/routes in the routing library match

@@ -4,7 +4,7 @@ import (
 	"bytes"
 	"net/http"
 
-	. "github.com/vulcand/vulcand/Godeps/_workspace/src/gopkg.in/check.v1"
+	. "gopkg.in/check.v1"
 )
 
 type MuxSuite struct {

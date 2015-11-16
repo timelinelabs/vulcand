@@ -2,21 +2,12 @@
 package registry
 
 import (
-<<<<<<< HEAD
 	"github.com/timelinelabs/vulcand/plugin"
 	"github.com/timelinelabs/vulcand/plugin/cbreaker"
 	"github.com/timelinelabs/vulcand/plugin/connlimit"
 	"github.com/timelinelabs/vulcand/plugin/ratelimit"
 	"github.com/timelinelabs/vulcand/plugin/rewrite"
 	"github.com/timelinelabs/vulcand/plugin/trace"
-=======
-	"github.com/vulcand/vulcand/plugin"
-	"github.com/vulcand/vulcand/plugin/cbreaker"
-	"github.com/vulcand/vulcand/plugin/connlimit"
-	"github.com/vulcand/vulcand/plugin/ratelimit"
-	"github.com/vulcand/vulcand/plugin/rewrite"
-	"github.com/vulcand/vulcand/plugin/trace"
->>>>>>> master
 )
 
 func GetRegistry() *plugin.Registry {

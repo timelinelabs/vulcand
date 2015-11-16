@@ -7,8 +7,8 @@ import (
 
 	"github.com/timelinelabs/vulcand/engine"
 	"github.com/timelinelabs/vulcand/proxy"
-	"github.com/vulcand/vulcand/Godeps/_workspace/src/github.com/vulcand/log"
-	"github.com/vulcand/vulcand/Godeps/_workspace/src/github.com/vulcand/timetools"
+	"github.com/vulcand/vulcand/Godeps/_workspace/src/github.com/mailgun/log"
+	"github.com/vulcand/vulcand/Godeps/_workspace/src/github.com/mailgun/timetools"
 )
 
 // Supervisor watches changes to the dynamic backends and applies those changes to the server in real time.

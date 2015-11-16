@@ -17,8 +17,8 @@ import (
 	"github.com/timelinelabs/vulcand/stapler"
 	"github.com/timelinelabs/vulcand/supervisor"
 	"github.com/timelinelabs/vulcand/testutils"
-	"github.com/vulcand/vulcand/Godeps/_workspace/src/github.com/vulcand/log"
-	"github.com/vulcand/vulcand/Godeps/_workspace/src/github.com/vulcand/scroll"
+	"github.com/vulcand/vulcand/Godeps/_workspace/src/github.com/mailgun/log"
+	"github.com/vulcand/vulcand/Godeps/_workspace/src/github.com/mailgun/scroll"
 
 	. "github.com/vulcand/vulcand/Godeps/_workspace/src/gopkg.in/check.v1"
 )
