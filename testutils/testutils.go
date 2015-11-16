@@ -8,11 +8,11 @@ import (
 	"net/http/httptest"
 	"sync/atomic"
 
-	"github.com/vulcand/vulcand/Godeps/_workspace/src/golang.org/x/crypto/ocsp"
+	"golang.org/x/crypto/ocsp"
 
+	routelib "github.com/mailgun/route"
 	"github.com/timelinelabs/vulcand/engine"
 	"github.com/timelinelabs/vulcand/plugin/ratelimit"
-	routelib "github.com/vulcand/vulcand/Godeps/_workspace/src/github.com/mailgun/route"
 )
 
 func init() {

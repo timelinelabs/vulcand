@@ -3,11 +3,11 @@ package memng
 import (
 	"testing"
 
+	"github.com/mailgun/log"
 	"github.com/timelinelabs/vulcand/engine/test"
 	"github.com/timelinelabs/vulcand/plugin/registry"
-	"github.com/vulcand/vulcand/Godeps/_workspace/src/github.com/mailgun/log"
 
-	. "github.com/vulcand/vulcand/Godeps/_workspace/src/gopkg.in/check.v1"
+	. "gopkg.in/check.v1"
 )
 
 func TestMem(t *testing.T) { TestingT(t) }

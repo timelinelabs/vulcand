@@ -1,7 +1,14 @@
 {
 	"ImportPath": "github.com/timelinelabs/vulcand",
 	"GoVersion": "go1.5.1",
+	"Packages": [
+		"./..."
+	],
 	"Deps": [
+		{
+			"ImportPath": "github.com/buger/goterm",
+			"Rev": "db9aaed44abbb1be9061aa43612ede2e864c5973"
+		},
 		{
 			"ImportPath": "github.com/codegangsta/cli",
 			"Comment": "1.2.0-62-gbf4a526",
@@ -70,6 +77,10 @@
 			"Rev": "8d49f51577f79f0ffd7607ec9fab42b300002851"
 		},
 		{
+			"ImportPath": "github.com/mailgun/oxy/testutils",
+			"Rev": "8d49f51577f79f0ffd7607ec9fab42b300002851"
+		},
+		{
 			"ImportPath": "github.com/mailgun/oxy/trace",
 			"Rev": "8d49f51577f79f0ffd7607ec9fab42b300002851"
 		},
@@ -94,6 +105,14 @@
 			"Rev": "5abd4e96a45c386928ed2ca2a7ef63e2533e18ec"
 		},
 		{
+			"ImportPath": "github.com/vulcand/oxy/utils",
+			"Rev": "8d49f51577f79f0ffd7607ec9fab42b300002851"
+		},
+		{
+			"ImportPath": "github.com/vulcand/predicate",
+			"Rev": "cb0bff91a7ab7cf7571e661ff883fc997bc554a3"
+		},
+		{
 			"ImportPath": "github.com/vulcand/vulcand/router",
 			"Comment": "v0.8.0-beta.3-54-g40bd3c3",
 			"Rev": "40bd3c38bf5a52f708f18acc39782475aa6e9bb2"
@@ -113,6 +132,15 @@
 		{
 			"ImportPath": "golang.org/x/crypto/salsa20/salsa",
 			"Rev": "4ed45ec682102c643324fae5dff8dab085b6c300"
+		},
+		{
+			"ImportPath": "gopkg.in/check.v1",
+			"Rev": "11d3bc7aa68e238947792f30573146a3231fc0f1"
+		},
+		{
+			"ImportPath": "gopkg.in/mgo.v2/bson",
+			"Comment": "r2015.10.05-1-g4d04138",
+			"Rev": "4d04138ffef2791c479c0c8bbffc30b34081b8d9"
 		}
 	]
 }

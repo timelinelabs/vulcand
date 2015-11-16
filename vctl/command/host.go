@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"time"
 
+	"github.com/codegangsta/cli"
 	"github.com/timelinelabs/vulcand/engine"
-	"github.com/vulcand/vulcand/Godeps/_workspace/src/github.com/codegangsta/cli"
 )
 
 func NewHostCommand(cmd *Command) cli.Command {

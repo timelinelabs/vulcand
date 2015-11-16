@@ -6,11 +6,11 @@ import (
 	"os"
 	"time"
 
+	"github.com/mailgun/metrics"
+	"github.com/mailgun/timetools"
 	"github.com/timelinelabs/vulcand/engine"
 	"github.com/timelinelabs/vulcand/plugin"
 	"github.com/timelinelabs/vulcand/router"
-	"github.com/vulcand/vulcand/Godeps/_workspace/src/github.com/mailgun/metrics"
-	"github.com/vulcand/vulcand/Godeps/_workspace/src/github.com/mailgun/timetools"
 )
 
 type Proxy interface {

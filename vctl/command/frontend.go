@@ -1,9 +1,9 @@
 package command
 
 import (
+	"github.com/codegangsta/cli"
 	"github.com/mailgun/route"
 	"github.com/timelinelabs/vulcand/engine"
-	"github.com/vulcand/vulcand/Godeps/_workspace/src/github.com/codegangsta/cli"
 )
 
 func NewFrontendCommand(cmd *Command) cli.Command {

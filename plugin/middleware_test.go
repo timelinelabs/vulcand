@@ -5,8 +5,9 @@ import (
 	"fmt"
 	"net/http"
 
-	. "github.com/vulcand/vulcand/Godeps/_workspace/src/gopkg.in/check.v1"
 	"testing"
+
+	. "gopkg.in/check.v1"
 )
 
 func TestMdw(t *testing.T) { TestingT(t) }

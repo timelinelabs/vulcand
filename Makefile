@@ -13,7 +13,7 @@ VULCAN_FLAGS := VULCAND_TEST_ETCD_NODES=${ETCD_NODES} VULCAND_TEST_ETCD_PREFIX=$
 DOCKER_TAG ?= latest
 
 test: clean
-	go test -v ./... -cover
+	godep go test -v ./... -cover
 
 test-with-etcd: clean
 	${ETCD_FLAGS} go test -v ./... -cover

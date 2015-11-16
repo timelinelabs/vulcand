@@ -6,16 +6,16 @@ import (
 	"testing"
 	"time"
 
+	"github.com/mailgun/log"
+	"github.com/mailgun/oxy/testutils"
+	"github.com/mailgun/timetools"
 	"github.com/timelinelabs/vulcand/engine"
 	"github.com/timelinelabs/vulcand/engine/memng"
 	"github.com/timelinelabs/vulcand/plugin/registry"
 	"github.com/timelinelabs/vulcand/proxy"
 	"github.com/timelinelabs/vulcand/stapler"
 	. "github.com/timelinelabs/vulcand/testutils"
-	"github.com/vulcand/vulcand/Godeps/_workspace/src/github.com/mailgun/log"
-	"github.com/vulcand/vulcand/Godeps/_workspace/src/github.com/mailgun/timetools"
-	"github.com/vulcand/vulcand/Godeps/_workspace/src/github.com/vulcand/oxy/testutils"
-	. "github.com/vulcand/vulcand/Godeps/_workspace/src/gopkg.in/check.v1"
+	. "gopkg.in/check.v1"
 )
 
 func TestSupervisor(t *testing.T) { TestingT(t) }

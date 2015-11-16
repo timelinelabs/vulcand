@@ -6,8 +6,8 @@ import (
 	"testing"
 
 	"github.com/mailgun/oxy/forward"
+	"github.com/mailgun/oxy/testutils"
 	"github.com/mailgun/oxy/utils"
-	"github.com/vulcand/oxy/testutils"
 	. "gopkg.in/check.v1"
 )
 

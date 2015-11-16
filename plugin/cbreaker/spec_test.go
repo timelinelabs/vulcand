@@ -5,9 +5,9 @@ import (
 	"testing"
 	"time"
 
+	"github.com/codegangsta/cli"
 	"github.com/timelinelabs/vulcand/plugin"
-	"github.com/vulcand/vulcand/Godeps/_workspace/src/github.com/codegangsta/cli"
-	. "github.com/vulcand/vulcand/Godeps/_workspace/src/gopkg.in/check.v1"
+	. "gopkg.in/check.v1"
 )
 
 func TestCL(t *testing.T) { TestingT(t) }

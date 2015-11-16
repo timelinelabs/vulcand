@@ -6,10 +6,10 @@ import (
 	"testing"
 	"time"
 
+	"github.com/mailgun/route"
 	"github.com/timelinelabs/vulcand/plugin"
 	"github.com/timelinelabs/vulcand/plugin/connlimit"
-	"github.com/vulcand/vulcand/Godeps/_workspace/src/github.com/mailgun/route"
-	. "github.com/vulcand/vulcand/Godeps/_workspace/src/gopkg.in/check.v1"
+	. "gopkg.in/check.v1"
 )
 
 func TestBackend(t *testing.T) { TestingT(t) }

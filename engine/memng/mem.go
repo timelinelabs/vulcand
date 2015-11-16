@@ -8,7 +8,7 @@ import (
 	"github.com/timelinelabs/vulcand/engine"
 	"github.com/timelinelabs/vulcand/plugin"
 
-	"github.com/vulcand/vulcand/Godeps/_workspace/src/github.com/mailgun/log"
+	"github.com/mailgun/log"
 )
 
 // Mem is exported to provide easy access to its internals

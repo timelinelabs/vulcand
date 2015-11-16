@@ -7,12 +7,12 @@ import (
 	"strconv"
 	"time"
 
+	"github.com/mailgun/log"
+	"github.com/mailgun/scroll"
 	"github.com/timelinelabs/vulcand/anomaly"
 	"github.com/timelinelabs/vulcand/engine"
 	"github.com/timelinelabs/vulcand/plugin"
 	"github.com/timelinelabs/vulcand/router"
-	"github.com/vulcand/vulcand/Godeps/_workspace/src/github.com/mailgun/log"
-	"github.com/vulcand/vulcand/Godeps/_workspace/src/github.com/mailgun/scroll"
 )
 
 type ProxyController struct {

@@ -3,9 +3,9 @@ package command
 import (
 	"fmt"
 
+	"github.com/codegangsta/cli"
 	"github.com/timelinelabs/vulcand/engine"
 	"github.com/timelinelabs/vulcand/plugin"
-	"github.com/vulcand/vulcand/Godeps/_workspace/src/github.com/codegangsta/cli"
 )
 
 func NewMiddlewareCommands(cmd *Command) []cli.Command {

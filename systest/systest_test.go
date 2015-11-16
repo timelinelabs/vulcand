@@ -15,14 +15,14 @@ import (
 	"testing"
 	"time"
 
+	"github.com/coreos/go-etcd/etcd"
+	"github.com/mailgun/log"
+	"github.com/mailgun/oxy/testutils"
 	"github.com/timelinelabs/vulcand/engine"
 	"github.com/timelinelabs/vulcand/secret"
 	. "github.com/timelinelabs/vulcand/testutils"
-	"github.com/vulcand/vulcand/Godeps/_workspace/src/github.com/coreos/go-etcd/etcd"
-	"github.com/vulcand/vulcand/Godeps/_workspace/src/github.com/mailgun/log"
-	"github.com/vulcand/vulcand/Godeps/_workspace/src/github.com/vulcand/oxy/testutils"
 
-	. "github.com/vulcand/vulcand/Godeps/_workspace/src/gopkg.in/check.v1"
+	. "gopkg.in/check.v1"
 )
 
 func TestVulcandWithEtcd(t *testing.T) { TestingT(t) }

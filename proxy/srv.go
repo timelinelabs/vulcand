@@ -7,13 +7,13 @@ import (
 	"net"
 	"net/http"
 
-	"github.com/vulcand/vulcand/Godeps/_workspace/src/golang.org/x/crypto/ocsp"
+	"golang.org/x/crypto/ocsp"
 
 	"github.com/timelinelabs/vulcand/engine"
 
-	"github.com/vulcand/vulcand/Godeps/_workspace/src/github.com/mailgun/log"
-	"github.com/vulcand/vulcand/Godeps/_workspace/src/github.com/mailgun/manners"
-	"github.com/vulcand/vulcand/Godeps/_workspace/src/github.com/mailgun/route"
+	"github.com/mailgun/log"
+	"github.com/mailgun/manners"
+	"github.com/mailgun/route"
 )
 
 // srv contains all that is necessary to run the HTTP(s) server. server does not work on its own,

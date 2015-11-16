@@ -6,7 +6,7 @@ import (
 	"time"
 
 	. "github.com/timelinelabs/vulcand/engine"
-	. "github.com/vulcand/vulcand/Godeps/_workspace/src/gopkg.in/check.v1"
+	. "gopkg.in/check.v1"
 )
 
 func TestAnomaly(t *testing.T) { TestingT(t) }

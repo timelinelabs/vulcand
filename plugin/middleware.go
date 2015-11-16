@@ -6,8 +6,8 @@ import (
 	"net/http"
 	"reflect"
 
-	"github.com/vulcand/vulcand/Godeps/_workspace/src/github.com/codegangsta/cli"
-	"github.com/vulcand/vulcand/Godeps/_workspace/src/github.com/mailgun/route"
+	"github.com/codegangsta/cli"
+	"github.com/mailgun/route"
 	"github.com/vulcand/vulcand/router"
 )
 

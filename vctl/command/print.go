@@ -5,8 +5,8 @@ import (
 	"fmt"
 	"io"
 
+	"github.com/buger/goterm"
 	"github.com/timelinelabs/vulcand/engine"
-	"github.com/vulcand/vulcand/Godeps/_workspace/src/github.com/buger/goterm"
 )
 
 func (cmd *Command) printResult(format string, in interface{}, err error) {
