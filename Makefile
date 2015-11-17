@@ -86,7 +86,7 @@ docker-build:
 docker-publish: docker-build
 	docker tag vulcand quay.io/timeline_labs/vulcand:$(DOCKER_TAG)
 	docker push quay.io/timeline_labs/vulcand:$(DOCKER_TAG)
-	docker rmi uay.io/timeline_labs/vulcand:$(DOCKER_TAG)
+	docker rmi quay.io/timeline_labs/vulcand:$(DOCKER_TAG)
 	docker tag vulcand quay.io/timeline_labs/vulcand:latest
 	docker push quay.io/timeline_labs/vulcand:latest
 	docker rmi quay.io/timeline_labs/vulcand:latest
