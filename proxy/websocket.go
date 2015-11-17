@@ -160,9 +160,7 @@ func (w *WebsocketProxy) ServerHTTP(rw http.ResponseWriter, req *http.Request) {
 	if w.Upgrader == nil {
 		upgrader = DefaultUpgrader
 	}
-	if upgrader.CheckOrigin == nil {
-		upgrader.CheckOrigin = DefaultCORS
-	}
+	upgrader.CheckOrigin = DefaultCORS
 
 	// Only pass those headers to the upgrader.
 	upgradeHeader := http.Header{}
@@ -173,6 +171,7 @@ func (w *WebsocketProxy) ServerHTTP(rw http.ResponseWriter, req *http.Request) {
 
 	// Now upgrade the existing incoming request to a WebSocket connection.
 	// Also pass the header that we gathered from the Dial handshake.
+	log.Infof("Open WS connection: CheckOrigin=%t Upgrader=%+v", upgrader.CheckOrigin(req), upgrader)
 	connPub, err := upgrader.Upgrade(rw, req, upgradeHeader)
 	if err != nil {
 		log.Errorf("websocketproxy: couldn't upgrade %s\n", err)
