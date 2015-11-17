@@ -81,7 +81,15 @@ docker-clean:
 docker-build:
 	GOOS=linux CGO_ENABLED=0 godep go build -a -tags netgo -installsuffix cgo -ldflags '-w -s' -o ./bin/vulcand .
 	GOOS=linux CGO_ENABLED=0 godep go build -a -tags netgo -installsuffix cgo -ldflags '-w -s' -o ./bin/vctl ./vctl
-	docker build -t quay.io/timeline_labs/vulcand:$(DOCKER_TAG) -f Dockerfile-scratch .
+	docker build -t vulcand -f Dockerfile-scratch .
+
+docker-publish: docker-build
+	docker tag vulcand quay.io/timeline_labs/vulcand:$(DOCKER_TAG)
+	docker push quay.io/timeline_labs/vulcand:$(DOCKER_TAG)
+	docker rmi uay.io/timeline_labs/vulcand:$(DOCKER_TAG)
+	docker tag vulcand quay.io/timeline_labs/vulcand:latest
+	docker push quay.io/timeline_labs/vulcand:latest
+	docker rmi quay.io/timeline_labs/vulcand:latest
 
 docker-minimal-linux:
 	bash scripts/build-minimal-linux.sh ${SEAL_KEY}
