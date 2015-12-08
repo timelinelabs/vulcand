@@ -162,6 +162,7 @@ func rawURL(request *http.Request) string {
 	if request.TLS != nil || isXForwardedHTTPS(request) {
 		scheme = "https"
 	}
+
 	return strings.Join([]string{scheme, "://", request.Host, request.RequestURI}, "")
 }
 

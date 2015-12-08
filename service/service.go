@@ -12,19 +12,19 @@ import (
 	"syscall"
 	"time"
 
-	"github.com/coreos/go-etcd/etcd"
 	"github.com/mailgun/log"
 	"github.com/mailgun/manners"
 	"github.com/mailgun/metrics"
 	"github.com/mailgun/scroll"
 	"github.com/timelinelabs/vulcand/api"
 	"github.com/timelinelabs/vulcand/engine"
-	"github.com/timelinelabs/vulcand/engine/etcdng"
+	"github.com/timelinelabs/vulcand/engine/etcdv2ng"
 	"github.com/timelinelabs/vulcand/plugin"
 	"github.com/timelinelabs/vulcand/proxy"
 	"github.com/timelinelabs/vulcand/secret"
 	"github.com/timelinelabs/vulcand/stapler"
 	"github.com/timelinelabs/vulcand/supervisor"
+	etcd "github.com/vulcand/vulcand/Godeps/_workspace/src/github.com/coreos/etcd/client"
 )
 
 func Run(registry *plugin.Registry) error {
@@ -43,7 +43,7 @@ func Run(registry *plugin.Registry) error {
 }
 
 type Service struct {
-	client        *etcd.Client
+	client        etcd.Client
 	options       Options
 	registry      *plugin.Registry
 	apiApp        *scroll.App
@@ -265,11 +265,11 @@ func (s *Service) newEngine() error {
 	if err != nil {
 		return err
 	}
-	ng, err := etcdng.New(
+	ng, err := etcdv2ng.New(
 		s.options.EtcdNodes,
 		s.options.EtcdKey,
 		s.registry,
-		etcdng.Options{
+		etcdv2ng.Options{
 			EtcdCaFile:              s.options.EtcdCaFile,
 			EtcdCertFile:            s.options.EtcdCertFile,
 			EtcdKeyFile:             s.options.EtcdKeyFile,
