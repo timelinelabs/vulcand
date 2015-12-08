@@ -12,6 +12,7 @@ import (
 	"syscall"
 	"time"
 
+	etcd "github.com/coreos/etcd/client"
 	"github.com/mailgun/log"
 	"github.com/mailgun/manners"
 	"github.com/mailgun/metrics"
@@ -24,7 +25,6 @@ import (
 	"github.com/timelinelabs/vulcand/secret"
 	"github.com/timelinelabs/vulcand/stapler"
 	"github.com/timelinelabs/vulcand/supervisor"
-	etcd "github.com/vulcand/vulcand/Godeps/_workspace/src/github.com/coreos/etcd/client"
 )
 
 func Run(registry *plugin.Registry) error {

@@ -21,8 +21,8 @@
 		},
 		{
 			"ImportPath": "github.com/coreos/etcd/client",
-			"Comment": "v2.3.0-alpha.0-73-gc400d05",
-			"Rev": "c400d05d0aa73e21e431c16145e558d624098018"
+			"Comment": "v2.3.0-alpha.0-123-g14210cf",
+			"Rev": "14210cf8a73d761fb4c2628fd6ffbbdab8916eb1"
 		},
 		{
 			"ImportPath": "github.com/gorilla/context",

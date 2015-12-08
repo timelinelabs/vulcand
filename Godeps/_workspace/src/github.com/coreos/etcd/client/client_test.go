@@ -28,7 +28,7 @@ import (
 	"time"
 
 	"github.com/coreos/etcd/pkg/testutil"
-	"github.com/vulcand/vulcand/Godeps/_workspace/src/golang.org/x/net/context"
+	"golang.org/x/net/context"
 )
 
 type actionAssertingHTTPClient struct {

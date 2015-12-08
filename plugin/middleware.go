@@ -8,7 +8,7 @@ import (
 
 	"github.com/codegangsta/cli"
 	"github.com/mailgun/route"
-	"github.com/vulcand/vulcand/router"
+	"github.com/timelinelabs/vulcand/router"
 )
 
 // Middleware specification, used to construct new middlewares and plug them into CLI API and backends

@@ -27,8 +27,8 @@ import (
 	"time"
 
 	"github.com/coreos/etcd/pkg/pathutil"
-	"github.com/vulcand/vulcand/Godeps/_workspace/src/github.com/ugorji/go/codec"
-	"github.com/vulcand/vulcand/Godeps/_workspace/src/golang.org/x/net/context"
+	"github.com/ugorji/go/codec"
+	"golang.org/x/net/context"
 )
 
 const (

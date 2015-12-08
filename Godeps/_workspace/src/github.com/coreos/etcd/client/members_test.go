@@ -22,8 +22,9 @@ import (
 	"reflect"
 	"testing"
 
+	"golang.org/x/net/context"
+
 	"github.com/coreos/etcd/pkg/types"
-	"github.com/vulcand/vulcand/Godeps/_workspace/src/golang.org/x/net/context"
 )
 
 func TestMembersAPIActionList(t *testing.T) {
