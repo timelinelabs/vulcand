@@ -10,7 +10,7 @@ SEAL_KEY := 1b727a055500edd9ab826840ce9428dc8bace1c04addc67bbac6b096e25ede4b
 ETCD_FLAGS := VULCAND_TEST_ETCD_NODES=${ETCD_NODES}
 VULCAN_FLAGS := VULCAND_TEST_ETCD_NODES=${ETCD_NODES} VULCAND_TEST_ETCD_PREFIX=${PREFIX} VULCAND_TEST_API_URL=${API_URL} VULCAND_TEST_SERVICE_URL=${SERVICE_URL} VULCAND_TEST_SEAL_KEY=${SEAL_KEY}
 
-DOCKER_TAG ?= latest
+SHA ?= $$(git rev-parse --short=8 HEAD)
 
 test: clean
 	godep go test -v ./... -cover
@@ -84,9 +84,9 @@ docker-build:
 	docker build -t vulcand -f Dockerfile-scratch .
 
 docker-publish: docker-build
-	docker tag vulcand quay.io/timeline_labs/vulcand:$(DOCKER_TAG)
-	docker push quay.io/timeline_labs/vulcand:$(DOCKER_TAG)
-	docker rmi quay.io/timeline_labs/vulcand:$(DOCKER_TAG)
+	docker tag vulcand quay.io/timeline_labs/vulcand:$(SHA)
+	docker push quay.io/timeline_labs/vulcand:$(SHA)
+	docker rmi quay.io/timeline_labs/vulcand:$(SHA)
 	docker tag vulcand quay.io/timeline_labs/vulcand:latest
 	docker push quay.io/timeline_labs/vulcand:latest
 	docker rmi quay.io/timeline_labs/vulcand:latest
