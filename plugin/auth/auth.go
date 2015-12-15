@@ -13,7 +13,7 @@ import (
 const Type = "auth"
 
 type Auth struct {
-	user, pass string
+	User, Pass string
 }
 
 type handler struct {
@@ -59,12 +59,12 @@ func (a *Auth) NewHandler(next http.Handler) (http.Handler, error) {
 }
 
 func (a *Auth) String() string {
-	return fmt.Sprintf("username=%s password=******", a.user)
+	return fmt.Sprintf("username=%s password=******", a.User)
 }
 
 func (h *handler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 	auth, er := utils.ParseAuthHeader(r.Header.Get("Authorization"))
-	if er != nil || !authorized(h.user, h.pass, auth) {
+	if er != nil || !authorized(h.User, h.Pass, auth) {
 		w.WriteHeader(http.StatusForbidden)
 		w.Write([]byte(http.StatusText(http.StatusForbidden)))
 		return
@@ -73,7 +73,7 @@ func (h *handler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 }
 
 func FromOther(a Auth) (plugin.Middleware, error) {
-	return New(a.user, a.pass)
+	return New(a.User, a.Pass)
 }
 
 func FromCli(c *cli.Context) (plugin.Middleware, error) {
