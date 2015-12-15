@@ -84,10 +84,10 @@ docker-build:
 	docker build -t vulcand -f Dockerfile-scratch .
 
 docker-publish: docker-build
-	docker tag vulcand quay.io/timeline_labs/vulcand:$(SHA)
+	docker tag -f vulcand quay.io/timeline_labs/vulcand:$(SHA)
 	docker push quay.io/timeline_labs/vulcand:$(SHA)
 	docker rmi quay.io/timeline_labs/vulcand:$(SHA)
-	docker tag vulcand quay.io/timeline_labs/vulcand:latest
+	docker tag -f vulcand quay.io/timeline_labs/vulcand:latest
 	docker push quay.io/timeline_labs/vulcand:latest
 	docker rmi quay.io/timeline_labs/vulcand:latest
 

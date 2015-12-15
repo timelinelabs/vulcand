@@ -3,6 +3,7 @@ package registry
 
 import (
 	"github.com/timelinelabs/vulcand/plugin"
+	"github.com/timelinelabs/vulcand/plugin/auth"
 	"github.com/timelinelabs/vulcand/plugin/cbreaker"
 	"github.com/timelinelabs/vulcand/plugin/connlimit"
 	"github.com/timelinelabs/vulcand/plugin/ratelimit"
@@ -19,6 +20,7 @@ func GetRegistry() *plugin.Registry {
 		rewrite.GetSpec(),
 		cbreaker.GetSpec(),
 		trace.GetSpec(),
+		auth.GetSpec(),
 	}
 
 	for _, spec := range specs {
