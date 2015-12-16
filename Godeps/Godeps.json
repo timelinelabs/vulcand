@@ -10,9 +10,28 @@
 			"Rev": "db9aaed44abbb1be9061aa43612ede2e864c5973"
 		},
 		{
+			"ImportPath": "github.com/codahale/hdrhistogram",
+			"Rev": "954f16e8b9ef0e5d5189456aa4c1202758e04f17"
+		},
+		{
 			"ImportPath": "github.com/codegangsta/cli",
 			"Comment": "1.2.0-62-gbf4a526",
 			"Rev": "bf4a526f48af7badd25d2cb02d587e1b01be3b50"
+		},
+		{
+			"ImportPath": "github.com/coreos/etcd/client",
+			"Comment": "v2.3.0-alpha.0-159-g9b26753",
+			"Rev": "9b26753dbf85e83b4c14f280d06623cc87bc17d6"
+		},
+		{
+			"ImportPath": "github.com/coreos/etcd/pkg/pathutil",
+			"Comment": "v2.3.0-alpha.0-159-g9b26753",
+			"Rev": "9b26753dbf85e83b4c14f280d06623cc87bc17d6"
+		},
+		{
+			"ImportPath": "github.com/coreos/etcd/pkg/types",
+			"Comment": "v2.3.0-alpha.0-159-g9b26753",
+			"Rev": "9b26753dbf85e83b4c14f280d06623cc87bc17d6"
 		},
 		{
 			"ImportPath": "github.com/coreos/go-etcd/etcd",
@@ -20,9 +39,8 @@
 			"Rev": "003851be7bb0694fe3cc457a49529a19388ee7cf"
 		},
 		{
-			"ImportPath": "github.com/coreos/etcd/client",
-			"Comment": "v2.3.0-alpha.0-123-g14210cf",
-			"Rev": "14210cf8a73d761fb4c2628fd6ffbbdab8916eb1"
+			"ImportPath": "github.com/goji/httpauth",
+			"Rev": "c39b032b1fabde02a9be9eee9f42d9537a1b1919"
 		},
 		{
 			"ImportPath": "github.com/gorilla/context",
@@ -62,6 +80,10 @@
 			"Rev": "565402cd71fbd9c12aa7e295324ea357e970a61e"
 		},
 		{
+			"ImportPath": "github.com/mailgun/oxy/cbreaker",
+			"Rev": "8d49f51577f79f0ffd7607ec9fab42b300002851"
+		},
+		{
 			"ImportPath": "github.com/mailgun/oxy/connlimit",
 			"Rev": "8d49f51577f79f0ffd7607ec9fab42b300002851"
 		},
@@ -74,8 +96,8 @@
 			"Rev": "8d49f51577f79f0ffd7607ec9fab42b300002851"
 		},
 		{
-			"ImportPath": "github.com/ugorji/go/codec",
-			"Rev": "ea9cd21fa0bc41ee4bdd50ac7ed8cbc7ea2ed960"
+			"ImportPath": "github.com/mailgun/oxy/ratelimit",
+			"Rev": "8d49f51577f79f0ffd7607ec9fab42b300002851"
 		},
 		{
 			"ImportPath": "github.com/mailgun/oxy/roundrobin",
@@ -110,8 +132,16 @@
 			"Rev": "7e6055773c5137efbeb3bd2410d705fe10ab6bfd"
 		},
 		{
+			"ImportPath": "github.com/mailgun/ttlmap",
+			"Rev": "16b258d86efc53ac5cf3e550604f566c32624fab"
+		},
+		{
 			"ImportPath": "github.com/ugorji/go/codec",
-			"Rev": "5abd4e96a45c386928ed2ca2a7ef63e2533e18ec"
+			"Rev": "ea9cd21fa0bc41ee4bdd50ac7ed8cbc7ea2ed960"
+		},
+		{
+			"ImportPath": "github.com/vulcand/oxy/memmetrics",
+			"Rev": "8d49f51577f79f0ffd7607ec9fab42b300002851"
 		},
 		{
 			"ImportPath": "github.com/vulcand/oxy/utils",
@@ -120,11 +150,6 @@
 		{
 			"ImportPath": "github.com/vulcand/predicate",
 			"Rev": "cb0bff91a7ab7cf7571e661ff883fc997bc554a3"
-		},
-		{
-			"ImportPath": "github.com/vulcand/vulcand/router",
-			"Comment": "v0.8.0-beta.3-54-g40bd3c3",
-			"Rev": "40bd3c38bf5a52f708f18acc39782475aa6e9bb2"
 		},
 		{
 			"ImportPath": "golang.org/x/crypto/nacl/secretbox",
