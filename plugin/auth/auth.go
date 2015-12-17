@@ -64,13 +64,6 @@ func (a *Auth) String() string {
 }
 
 func (h *handler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
-	// auth, er := utils.ParseAuthHeader(r.Header.Get("Authorization"))
-	// if er != nil || !authorized(h.User, h.Pass, auth) {
-	// 	w.WriteHeader(http.StatusForbidden)
-	// 	w.Write([]byte(http.StatusText(http.StatusForbidden)))
-	// 	return
-	// }
-	// h.next.ServeHTTP(w, r)
 	fn := httpauth.SimpleBasicAuth(h.User, h.Pass)
 	fn(h.next).ServeHTTP(w, r)
 }
