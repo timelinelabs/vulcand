@@ -59,11 +59,12 @@ func newWebsocketUpgrader(rr *roundrobin.RoundRobin, next http.Handler, f *front
 // the backend server and the frontend
 func (w *WebsocketUpgrader) ServeHTTP(wr http.ResponseWriter, req *http.Request) {
 	if !isWebsocket(req) {
-		log.Debugf("[websocketproxy] Upgrade not set. Upgrade=%s Connection=%s", req.Header.Get("Upgrade"), req.Header.Get("Connection"))
+		log.Debugf("[websocketproxy] Upgrade not set. Upgrade=%s  Connection=%s", req.Header.Get("Upgrade"), req.Header.Get("Connection"))
 		w.next.ServeHTTP(wr, req)
 		return
 	}
 
+	log.Debugf("[websocketproxy] Proxy websocket connection. Upgrade=%s Connection=%s", req.Header.Get("Upgrade"), req.Header.Get("Connection"))
 	url, er := w.rr.NextServer()
 	if er != nil {
 		log.Errorf("[websocketproxy] Round robin failed: %v", er)
@@ -176,7 +177,7 @@ func (w *WebsocketProxy) ServerHTTP(rw http.ResponseWriter, req *http.Request) {
 	log.Infof("[websocketproxy] Open websocket connection: CheckOrigin=%t Upgrader=%+v", upgrader.CheckOrigin(req), upgrader)
 	connPub, err := upgrader.Upgrade(rw, req, upgradeHeader)
 	if err != nil {
-		log.Errorf("[websocketproxy] couldn't upgrade %v\n", err)
+		log.Errorf("[websocketproxy] couldn't upgrade: %v\n", err)
 		return
 	}
 	defer connPub.Close()
