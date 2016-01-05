@@ -174,13 +174,14 @@ func (f *frontend) rebuild() error {
 	if err != nil {
 		return err
 	}
-	var handler http.Handler
-	switch f.frontend.Type {
-	default:
-		handler = str
-	case engine.WS, engine.WSS:
-		handler = newWebsocketUpgrader(rr, str, f)
-	}
+	// var handler http.Handler
+	// switch f.frontend.Type {
+	// default:
+	// 	handler = str
+	// case engine.WS, engine.WSS:
+	// 	handler = newWebsocketUpgrader(rr, str, f)
+	// }
+	handler = newWebsocketUpgrader(rr, str, f)
 
 	if err := syncServers(f.mux, rb, f.backend, watcher); err != nil {
 		return err

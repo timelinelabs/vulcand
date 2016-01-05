@@ -59,6 +59,7 @@ func newWebsocketUpgrader(rr *roundrobin.RoundRobin, next http.Handler, f *front
 // the backend server and the frontend
 func (w *WebsocketUpgrader) ServeHTTP(wr http.ResponseWriter, req *http.Request) {
 	if strings.Join(req.Header["Upgrade"], "") != "websocket" {
+		log.Debugf("[websocketproxy] Upgrade not set")
 		w.next.ServeHTTP(wr, req)
 		return
 	}
@@ -93,14 +94,14 @@ func wsProxy(u *url.URL) *WebsocketProxy {
 
 func (w *WebsocketProxy) ServerHTTP(rw http.ResponseWriter, req *http.Request) {
 	if w.URL == nil {
-		log.Errorf("websocketproxy: backend function is not defined")
+		log.Errorf("[websocketproxy] backend function is not defined")
 		http.Error(rw, "internal server error (code: 1)", http.StatusInternalServerError)
 		return
 	}
 
 	backendURL := w.URL(req)
 	if backendURL == nil {
-		log.Errorf("websocketproxy: backend URL is nil")
+		log.Errorf("[websocketproxy] backend URL is nil")
 		http.Error(rw, "internal server error (code: 2)", http.StatusInternalServerError)
 		return
 	}
@@ -143,6 +144,7 @@ func (w *WebsocketProxy) ServerHTTP(rw http.ResponseWriter, req *http.Request) {
 		requestHeader.Set("X-Forwarded-Proto", "https")
 	}
 
+	log.Debugf("[websocketproxy] Request Header: %v", requestHeader)
 	// Connect to the backend URL, also pass the headers we get from the requst
 	// together with the Forwarded headers we prepared above.
 	// TODO: support multiplexing on the same backend connection instead of
@@ -151,7 +153,7 @@ func (w *WebsocketProxy) ServerHTTP(rw http.ResponseWriter, req *http.Request) {
 	// http://tools.ietf.org/html/draft-ietf-hybi-websocket-multiplexing-01
 	connBackend, resp, err := dialer.Dial(backendURL.String(), requestHeader)
 	if err != nil {
-		log.Errorf("websocketproxy: couldn't dial to remote backend url %s, %s, %+v", backendURL.String(), err, resp)
+		log.Errorf("[websocketproxy] couldn't dial to remote backend url %s, %s, %+v", backendURL.String(), err, resp)
 		return
 	}
 	defer connBackend.Close()
@@ -171,10 +173,10 @@ func (w *WebsocketProxy) ServerHTTP(rw http.ResponseWriter, req *http.Request) {
 
 	// Now upgrade the existing incoming request to a WebSocket connection.
 	// Also pass the header that we gathered from the Dial handshake.
-	log.Infof("Open WS connection: CheckOrigin=%t Upgrader=%+v", upgrader.CheckOrigin(req), upgrader)
+	log.Infof("[websocketproxy] Open websocket connection: CheckOrigin=%t Upgrader=%+v", upgrader.CheckOrigin(req), upgrader)
 	connPub, err := upgrader.Upgrade(rw, req, upgradeHeader)
 	if err != nil {
-		log.Errorf("websocketproxy: couldn't upgrade %s\n", err)
+		log.Errorf("[websocketproxy] couldn't upgrade %v\n", err)
 		return
 	}
 	defer connPub.Close()
