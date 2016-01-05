@@ -58,15 +58,15 @@ func newWebsocketUpgrader(rr *roundrobin.RoundRobin, next http.Handler, f *front
 // ServeHTTP waits for a websocket upgrade request and creates a TCP connection between
 // the backend server and the frontend
 func (w *WebsocketUpgrader) ServeHTTP(wr http.ResponseWriter, req *http.Request) {
-	if strings.Join(req.Header["Upgrade"], "") != "websocket" {
-		log.Debugf("[websocketproxy] Upgrade not set")
+	if !isWebsocket(req) {
+		log.Debugf("[websocketproxy] Upgrade not set. Upgrade=%s Connection=%s", req.Header.Get("Upgrade"), req.Header.Get("Connection"))
 		w.next.ServeHTTP(wr, req)
 		return
 	}
 
 	url, er := w.rr.NextServer()
 	if er != nil {
-		log.Errorf("Round robin failed in websocket middleware: %v", er)
+		log.Errorf("[websocketproxy] Round robin failed: %v", er)
 		return
 	}
 	wsProxy(url).ServerHTTP(wr, req)
@@ -153,7 +153,7 @@ func (w *WebsocketProxy) ServerHTTP(rw http.ResponseWriter, req *http.Request) {
 	// http://tools.ietf.org/html/draft-ietf-hybi-websocket-multiplexing-01
 	connBackend, resp, err := dialer.Dial(backendURL.String(), requestHeader)
 	if err != nil {
-		log.Errorf("[websocketproxy] couldn't dial to remote backend url %s, %s, %+v", backendURL.String(), err, resp)
+		log.Errorf("[websocketproxy] couldn't dial to remote backend url '%s': %v: %+v", backendURL.String(), err, resp)
 		return
 	}
 	defer connBackend.Close()
@@ -192,4 +192,10 @@ func (w *WebsocketProxy) ServerHTTP(rw http.ResponseWriter, req *http.Request) {
 	go cp(connBackend.UnderlyingConn(), connPub.UnderlyingConn())
 	go cp(connPub.UnderlyingConn(), connBackend.UnderlyingConn())
 	wg.Wait()
+}
+
+func isWebsocket(req *http.Request) bool {
+	upgrade := http.CanonicalHeaderKey("upgrade")
+	connection := http.CanonicalHeaderKey("connection")
+	return req.Header.Get(upgrade) == "websocket" && req.Header.Get(connection) == "Upgrade"
 }

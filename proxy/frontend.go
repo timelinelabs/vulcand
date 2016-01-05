@@ -181,7 +181,7 @@ func (f *frontend) rebuild() error {
 	// case engine.WS, engine.WSS:
 	// 	handler = newWebsocketUpgrader(rr, str, f)
 	// }
-	handler = newWebsocketUpgrader(rr, str, f)
+	handler := newWebsocketUpgrader(rr, str, f)
 
 	if err := syncServers(f.mux, rb, f.backend, watcher); err != nil {
 		return err
