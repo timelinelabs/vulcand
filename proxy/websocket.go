@@ -141,9 +141,10 @@ func (w *WebsocketProxy) ServerHTTP(rw http.ResponseWriter, req *http.Request) {
 	// Set the originating protocol of the incoming HTTP request. The SSL might
 	// be terminated on our site and because we doing proxy adding this would
 	// be helpful for applications on the backend.
-	requestHeader.Set("X-Forwarded-Proto", "http")
-	if req.TLS != nil {
+	if isSSL(req) {
 		requestHeader.Set("X-Forwarded-Proto", "https")
+	} else {
+		requestHeader.Set("X-Forwarded-Proto", "http")
 	}
 
 	log.Debugf("[websocketproxy] [%v] Request Header: %v", req.Host, requestHeader)
@@ -157,6 +158,7 @@ func (w *WebsocketProxy) ServerHTTP(rw http.ResponseWriter, req *http.Request) {
 	if err != nil {
 		log.Errorf("[websocketproxy] [%v] couldn't dial backend '%s': [%d] %v", req.Host, backendURL.String(), resp.StatusCode, err)
 		out, _ := httputil.DumpResponse(resp, true)
+		log.Debugf("[websocketproxy] [%v] response: %s", req.Host, string(out))
 		http.Error(rw, string(out), resp.StatusCode)
 		return
 	}
@@ -202,4 +204,9 @@ func isWebsocket(req *http.Request) bool {
 	upgrade := http.CanonicalHeaderKey("upgrade")
 	connection := http.CanonicalHeaderKey("connection")
 	return req.Header.Get(upgrade) == "websocket" && req.Header.Get(connection) == "Upgrade"
+}
+
+func isSSL(req *http.Request) bool {
+	scheme := req.URL.Scheme
+	return req.TLS != nil || scheme == "https" || scheme == "wss"
 }
