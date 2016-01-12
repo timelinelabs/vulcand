@@ -65,7 +65,7 @@ func (w *WebsocketUpgrader) ServeHTTP(wr http.ResponseWriter, req *http.Request)
 		return
 	}
 
-	log.Debugf("[websocketproxy] [%v] Proxy websocket connection. Upgrade=%s Connection=%s", req.Host, req.Header.Get("Upgrade"), req.Header.Get("Connection"))
+	log.Debugf("[websocketproxy] [%v] Proxy websocket connection to %v. Upgrade=%s Connection=%s", req.Host, req.URL, req.Header.Get("Upgrade"), req.Header.Get("Connection"))
 	url, er := w.rr.NextServer()
 	if er != nil {
 		log.Errorf("[websocketproxy] [%v] Round robin failed: %v", req.Host, er)
