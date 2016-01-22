@@ -166,17 +166,17 @@ func (f *frontend) rebuild() error {
 	if settings.FailoverPredicate == "" {
 		settings.FailoverPredicate = `IsNetworkError() && RequestMethod() == "GET" && Attempts() < 2`
 	}
-	if settings.Limits.MaxMemBodyBytes < 1 {
-		settings.Limits.MaxMemBodyBytes = stream.DefaultMemBodyBytes
+	if settings.Limits.MaxMemBodyBytes < 0 {
+		settings.Limits.MaxMemBodyBytes = 0
 	}
-	if settings.Limits.MaxBodyBytes < 1 {
-		settings.Limits.MaxBodyBytes = stream.DefaultMaxBodyBytes
+	if settings.Limits.MaxBodyBytes < 0 {
+		settings.Limits.MaxBodyBytes = 0
 	}
 	if settings.Limits.MaxRespMemBodyBytes < 1 {
-		settings.Limits.MaxRespMemBodyBytes = stream.DefaultMemBodyBytes
+		settings.Limits.MaxRespMemBodyBytes = int32(1024 * 1024 * 4)
 	}
 	if settings.Limits.MaxRespBodyBytes < 1 {
-		settings.Limits.MaxRespBodyBytes = stream.DefaultMaxBodyBytes
+		settings.Limits.MaxRespBodyBytes = int32(1024 * 1024 * 20)
 	}
 
 	str, err := stream.New(next,
