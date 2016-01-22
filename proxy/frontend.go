@@ -172,11 +172,11 @@ func (f *frontend) rebuild() error {
 	if settings.Limits.MaxBodyBytes < 0 {
 		settings.Limits.MaxBodyBytes = 0
 	}
-	if settings.Limits.MaxRespMemBodyBytes < 1 {
-		settings.Limits.MaxRespMemBodyBytes = int64(1024 * 1024 * 4)
+	if settings.Limits.MaxRespMemBodyBytes < 0 {
+		settings.Limits.MaxRespMemBodyBytes = 0
 	}
-	if settings.Limits.MaxRespBodyBytes < 1 {
-		settings.Limits.MaxRespBodyBytes = int64(1024 * 1024 * 20)
+	if settings.Limits.MaxRespBodyBytes < 0 {
+		settings.Limits.MaxRespBodyBytes = 0
 	}
 
 	str, err := stream.New(next,
